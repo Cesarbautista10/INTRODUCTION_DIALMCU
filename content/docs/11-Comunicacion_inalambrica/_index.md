@@ -33,30 +33,25 @@ The DualMCU board leverages the functionality of the ESP32 microcontroller as bo
     <img src="/docs/2-Micropython/images/selector.png" alt="Block Diagram" title="Block Diagram" style="width: 600px;">
 </div>
 
-
-
-
-
-<!--
-
-
-
-
-
-
-
 ### Software
 Para la ejecución de esta práctica la dividiremos en las siguientes etapas de configuración que tendrán que seguirse en ese orden. 
 
+For run this practice for divide in the next step for configuration in the next order:
+### Configuration of a local server 
+The configuration of a envoirement of a step escencial that consider the intallation of componets necesaries for deploy to proyect as recourse principal. Requires a server local for deploy a service web in a local network. 
+### Node.js Installation 
+As a requier startinf , you need  a service web, both also this project deplyed in Node.js 
+Can download Node.js although the next page:
 
 
+> [Download Node.js](https://nodejs.org/en/download/)
+<!--
 ### Configuración de un servidor Local
 La configuración del entorno es un paso esencial que abarca la instalación de los componentes necesarios para desplegar el proyecto como recurso principal. Se requiere un servidor local para poder desplegar un servicio web en tu red local.
 
 #### Instalación de Node.js
 Como requisito inicial, necesitarás un servidor web, por lo que este proyecto se despliega en Node.js. Puedes descargar Node.js desde la siguiente página:
 
-> [Descargar Node.js](https://nodejs.org/en/download/)
 
 - Una vez completada la descarga, ejecuta el programa y selecciona "Instalar".
 - Aparecerá una ventana de bienvenida. Haz clic en "Siguiente".
