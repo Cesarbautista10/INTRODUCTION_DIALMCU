@@ -37,30 +37,21 @@ The DualMCU board leverages the functionality of the ESP32 microcontroller as bo
 Para la ejecución de esta práctica la dividiremos en las siguientes etapas de configuración que tendrán que seguirse en ese orden. 
 
 For run this practice for divide in the next step for configuration in the next order:
-### Configuration of a local server 
-The configuration of a envoirement of a step escencial that consider the intallation of componets necesaries for deploy to proyect as recourse principal. Requires a server local for deploy a service web in a local network. 
-### Node.js Installation 
-As a requier startinf , you need  a service web, both also this project deplyed in Node.js 
-Can download Node.js although the next page:
+### Configuration of a Local Server
+The configuration of an environment is an essential step that involves the installation of necessary components to deploy the project as the main resource. It requires a local server to deploy a web service on a local network.
 
+### Node.js Installation
+To start, you need a web service, and this project is deployed using Node.js. 
 
 > [Download Node.js](https://nodejs.org/en/download/)
-<!--
-### Configuración de un servidor Local
-La configuración del entorno es un paso esencial que abarca la instalación de los componentes necesarios para desplegar el proyecto como recurso principal. Se requiere un servidor local para poder desplegar un servicio web en tu red local.
 
-#### Instalación de Node.js
-Como requisito inicial, necesitarás un servidor web, por lo que este proyecto se despliega en Node.js. Puedes descargar Node.js desde la siguiente página:
+- Once the download is complete, run the program and select "Install."
+- Later, the terms and conditions screen will appear (we recommend reading). Click the "Next" or "Accept" button.
+- We recommend using the default configuration.
+- Finally, click "Install." When the installation is finished, select "Close" or "Finish."
 
-
-- Una vez completada la descarga, ejecuta el programa y selecciona "Instalar".
-- Aparecerá una ventana de bienvenida. Haz clic en "Siguiente".
-- Luego, se mostrarán los términos y condiciones en pantalla (se recomienda leerlos). Haz clic en "Siguiente".
-- Se te recomienda dejar la configuración de localización por defecto.
-- Finalmente, haz clic en "Instalar". Cuando termine la instalación, selecciona "Cerrar" o "Finalizar".
-
-### Verifica tu Instalación
-Para verificar que Node.js y NPM (Node Package Manager) se han instalado correctamente, abre el Command Prompt o PowerShell y escribe los siguientes comandos, luego presiona Enter:
+## Verify Your Installation
+To verify that Node.js and NPM (Node Package Manager) are installed correctly, open the Command Prompt or PowerShell and type the following commands, then press Enter.
 
 ```shell
 node -v
@@ -68,9 +59,9 @@ node -v
 
 <div style="text-align: center;">
     <img src="/docs/11-Comunicacion_inalambrica/images/node_version.png" alt="Block Diagram" title="Block Diagram" >
-    </div>
+</div>
 
-Deberías ver la versión de Node.js instalada. Luego, verifica la versión de NPM con este comando:
+You will see the installed version of Node.js. Next, verify the version of NPM using this command.
 
 ```shell
 npm -v
@@ -79,11 +70,12 @@ npm -v
     <img src="/docs/11-Comunicacion_inalambrica/images/npm_versiom.png" alt="Block Diagram" title="Block Diagram">
     </div>
 
-### Uso Básico
-Node.js es un framework que interpreta comandos que le envías. Para probar tu instalación, puedes crear un script de prueba siguiendo estos pasos:
+# Basic Use
+Node.js is a framework that interprets commands you send to it. To test your installation, you can create a test script with the following steps:
 
-- Abre tu editor de preferencia.
-Copia y pega este [código](./App/app.js):
+1. Open your preferred code editor.
+2. Copy and paste this [code](./App/app.js):
+
     ```javascript
     var http = require('http');
     http.createServer(function (req, res) {
@@ -91,83 +83,78 @@ Copia y pega este [código](./App/app.js):
     res.end('Hello World!');
     }).listen(8080);
     ```
-- Guarda el archivo como '**app.js**', asegurándote de recordar la ruta de almacenamiento.
-- Abre la consola de comandos en la ubicación donde se encuentra el archivo 'app.js' y ejecuta el siguiente comando:
+
+3. Save the file as '**app.js**' and confirm the saved path.
+4. Open the command console in the location where the 'app.js' file is saved and run the command:
+
     ```
     node app.js
     ```
-- Dado que el script se ejecuta en segundo plano, abre un navegador web y entra la siguiente dirección en la barra de navegación:
-    > http://localhost:8080
+The script will run in the background. Open your web browser and enter the following address in the navigation bar:
+ > http://localhost:8080
 
-- Deberías ver el texto "Hello World!".
+You will see the text "Hello World!"
 
-> **Nota**
->
-> En algunos casos, al intentar acceder externamente, es posible que aparezca una ventana emergente que, al dar acceso, permite la conexión a través de Node.js.
->
->![Ventana Emergente del Firewall](/docs/11-Comunicacion_inalambrica/images/firewall_promt.png)
+> **NOTE** 
+>In some cases, when trying to access externally, a pop-up window may appear. You should allow access to Node.js through your firewall.
 
+>![Firewall Popup Window](/docs/11-Comunicacion_inalambrica/images/firewall_promt.png)
+## Host Configuration
 
+Download or clone the repository. Find the example file in the [Control_web_panel](../Control_web_panel/) directory. As mentioned before regarding the environment configuration, you should run the file app.js with the following steps:
 
-### Configuración del Host
+Open the Command Prompt or PowerShell and write the following commands, then press Enter.
 
-
-Descarga o clona el repositorio. Encontrarás el archivo de ejemplo en el directorio [Control_web_panel](../Control_web_panel/). Como se mencionó en la configuración del entorno, debes ejecutar el archivo app.js de la siguiente manera:
-
-Abre el Command Prompt o PowerShell y escribe los siguientes comandos, luego presiona Enter:
-```
+```shell
 node app.js
 ```
 
-El código te mostrará un mensaje breve como el siguiente:
+This message that refente to status enable server, and the direction to conection is 
+
 ```
 Servidor en funcionamiento en 0.0.0.0:3000
 ```
-Esto significa que el servicio está activo, y la dirección a la que debes dirigirte para visualizar el proyecto es:
 
-http://localhost:3000/
-
+ > http://localhost:8080
 
 ![Image](/docs/11-Comunicacion_inalambrica/images/web_localhost.png)
 
-### Configuración del cliente
+## Client Configuration
 
-La ESP32 debe contar con el firmware de MicroPython.
+The ESP32 firmware for running Micropython, can be found in the directory [esp32micropython](https://github.com/UNIT-Electronics/DualMCU_ESP32_Panel_de_control_Web/blob/main/Control_web_panel/esp32micropython/).
 
+> [esp32_comunication_between_server_client.py](https://github.com/UNIT-Electronics/DualMCU_ESP32_Panel_de_control_Web/blob/main/Control_web_panel/esp32micropython/esp32_comunication_between_server_client.py)
 
-En el directorio de <a href="https://github.com/UNIT-Electronics/DualMCU_ESP32_Panel_de_control_Web/blob/main/Control_web_panel/esp32micropython/" target="_blank"> esp32micropython</a>
-encontrarás un archivo:
-> <a href="https://github.com/UNIT-Electronics/DualMCU_ESP32_Panel_de_control_Web/blob/main/Control_web_panel/esp32micropython/esp32_comunication_between_server_client.py" target="_blank"> esp32_comunication_between_server_client.py</a>
+You need to follow some steps to configure the code, in particular, enter the data for the WiFi network:
 
-Debes realizar algunos ajustes en el código, en particular, en los datos de tu red Wi-Fi:
 
 ```python
-ssid = "SSID"  # Reemplaza con el nombre de tu red Wi-Fi
-password = "PASSWORD"  # Reemplaza con la contraseña de tu red Wi-Fi
-
+ssid = "SSID"  # Replace with your Wi-Fi network name
+password = "PASSWORD"  # Replace with your Wi-Fi network password
 ```
 
-También debes cambiar el host en la siguiente línea:
+Also, change the host in the following line:
 
-```python 
-server_url = "http://tu_host:3000/endpoint" # Reemplaza con el nombre de la ip de tu servidor
+```python
+server_url = "http://tu_host:3000/endpoint"  # Replace with the IP address of your server
 ```
-Para conocer la dirección IP de tu dispositivo, en Windows, puedes abrir una terminal y ejecutar el comando:
+
+You can check the IP address of your device. In Windows, open the command prompt and run the command:
+
 > ipconfig
 
-En la sección de "Adaptadores de red inalámbricos", encontrarás una entrada similar a:
+In the "Wireless LAN adapter Wi-Fi" section, find the entry similar to:
 
-```python 
-Dirección IPv4. . . . . . . . . . . . . . : 192.168.0.2
-```
-Reemplaza tu_host por la dirección IP, por ejemplo:
-
-
-```python 
-server_url = "http://192.168.0.2:3000/endpoint" 
+```python
+IPv4 Address. . . . . . . . . . . . : 192.168.0.2
 ```
 
-###  Código
+Replace `tu_host` with the IP address, for example:
+
+```python
+server_url = "http://192.168.0.2:3000/endpoint"
+```
+## Code 
 
 ```PY
 import network
@@ -319,9 +306,8 @@ _thread.start_new_thread(loop2, ())
 time.sleep(10)
 
 ```
-
-###  Ejecutando el Programa
-Una vez que hayas realizado las modificaciones en el código, puedes ejecutarlo. En la consola de Thonny, verás una dirección IP a la que puedes acceder para verificar si el ESP32 está conectado:
+### Run Code
+Once you've modified the code, you can run it in the Thonny console. You will see an IP address to verify if the ESP32 is connected:
 
 ```yaml
 
@@ -330,31 +316,34 @@ Conectado a la red WiFi
 Dirección IP: 192.168.0.10
 Puedes acceder a esta dirección IP desde cualquier dispositivo en la misma red.
 ```
+
 ![ESP32](/docs/11-Comunicacion_inalambrica/images/SOY_EL_esp32.png)
 
 
-La interfaz que se muestra controla el LED 25 de la ESP32 y permite comprobar la funcionalidad del proyecto.
 
-Finalmente, el enlace con la interfaz integrada con el envío de información por el potenciómetro se verá algo como esto:
+The displayed interface controls the LED 25 of the ESP32 and allows to check the functionality of the project.
 
+Finally, the link with the interface integrated with the sending of information by the potentiometer will look something like this:
 ![Interfaz](/docs/11-Comunicacion_inalambrica/images/output.gif)
 
-###	 Conclusión
 
- La práctica realizada con DualMCU como cliente y servidor demuestra la versatilidad y potencial de este dispositivo en el ámbito de la comunicación inalámbrica. La capacidad para intercambiar datos de manera eficiente entre un cliente y un servidor abre un amplio abanico de posibilidades para aplicaciones IoT y sistemas embebidos. El aprendizaje obtenido al configurar y operar ambos roles permite comprender mejor el funcionamiento de las redes y cómo aprovechar al máximo las capacidades de la tarjeta de desarrollo DualMCU  en distintos escenarios.
+### Conclusion
+
+The practice carried out with DualMCU as a client and server demonstrates the versatility and potential of this device in the field of wireless communication. The ability to efficiently exchange data between a client and a server opens up a wide range of possibilities for IoT applications and embedded systems. The knowledge gained from configuring and operating both roles allows for a better understanding of network operations and how to make the most of the capabilities of the DualMCU development board in different scenarios.
 
 > **NOTE:** Keep in mind that the presented codes are only examples and may require configuration adjustments according to specific needs and requirements.
 
-# Continua con el curso [ Comunicación entre ESP32 y RP2040](/docs/12-comunicacion_esp32_rp2040/)
+
+# Continue with the course [ Communication Between Two Microcontrollers](/docs/12-comunicacion_esp32_rp2040/)
 
 ###  DualMCU ESP32+RP2040 
 
-Para obtener más información, consulte las páginas del producto en
+For more information, refer to the
 
 * https://uelectronics.com/
 * [Hardware-DualMCU](https://github.com/UNIT-Electronics/DualMCU/tree/main/Hardware)
 * [Product Reference Manual.pdf](https://github.com/UNIT-Electronics/DualMCU/blob/main/DualMCU(Product%20Reference%20Manual).pdf)
 * [C++ & Micropython Examples files for the UNIT DualMCU.](https://github.com/UNIT-Electronics/DualMCU/tree/main/Examples)
-* [Licencia](https://www.gnu.org/licenses/gpl-3.0.html) El código que se presenta en este repositorio está licenciado bajo la Licencia Pública General de GNU (GPL) versión 3.0.
+* [Licencia](https://www.gnu.org/licenses/gpl-3.0.html)  The code presented in this repository is licensed under the GNU General Public License (GPL) version 3.0.
 
-⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊  -->
+⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊

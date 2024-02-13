@@ -11,7 +11,7 @@ BookToC: false
 ###  Objective
 The main goal of this section is to develop the necessary skills to program a flashing effect, commonly known as "Blink" in programing, at a specific frequency.
 
->**NOTE:**  You can utilize two microcontrollers to enhance the capabilities in understanding and respect towards the development board. 
+>**NOTE:**  Utilize the two microcontrollers of board DualMCU.
 
 
 ###  Description
@@ -20,7 +20,7 @@ The implementation of a simple LED blinking program is supported by various bene
 The procedure to carry out this exercise involves the use of the two RGB LEDs integrated into the UNIT DUALMCU development board. The configuration and programming of both microcontrollers will be coordinated, allowing the desired blinking effect to be achieved. This exercise not only provides a practical introduction to LED handling and programming but also establishes a solid foundation for future practical activities in this specific development environment.
 
 
-### Requirements
+### Materials
 
 To carry out the program implementation, two RGB LEDs will be employed  are fully integrated into the development board. Hereafter, the detailed specifics of the materials to be used in this activity are provided.
 - <a href="https://uelectronics.com/producto/unit-dualmcu-esp32-rp2040-tarjeta-de-desarrollo/" target="_blank"> UNIT DualMCU board</a>

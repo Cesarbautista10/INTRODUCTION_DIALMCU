@@ -368,7 +368,7 @@ In this context, it is encouraged to replicate the same practice using the RP204
 > **NOTE:** Keep in mind that the presented codes are only examples and may require configuration adjustments according to specific needs and requirements.
 
 # Continue with the course [wireless communication](/docs/11-comunicacion_inalambrica/)
-* [Licencia](https://www.gnu.org/licenses/gpl-3.0.html) El código que se presenta en este repositorio está licenciado bajo la Licencia Pública General de GNU (GPL) versión 3.0.
+* [Licencia](https://www.gnu.org/licenses/gpl-3.0.html) The code presented in this repository is licensed under the GNU General Public License (GPL) version 3.0.
 
 ---
 ⌨️ with ❤️ from [UNIT-Electronics](https://github.com/UNIT-Electronics) 😊
